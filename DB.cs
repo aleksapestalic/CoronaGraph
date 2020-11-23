@@ -216,7 +216,7 @@ namespace CoronaGraph
             string cityName = "";
             string infected = "";
             string perc = "";
-
+            //test komitova
 
             List<string> ret = new List<string>();
             while (reader.Read())

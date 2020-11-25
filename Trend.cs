@@ -63,8 +63,8 @@ namespace CoronaGraph
 
 
             #region infected - eksponencijalni
-            double infJuce = Convert.ToDouble(splitJuce[5]);
-            double infDanas = Convert.ToDouble(splitDanas[5]);
+            double infJuce = Convert.ToDouble(splitJuce[1]);
+            double infDanas = Convert.ToDouble(splitDanas[1]);
 
             double eks = Math.Log(infDanas, infJuce); //eksponent baziran na razlici izmedju danasnjeg i jucerasnjeg preseka
 
@@ -153,12 +153,17 @@ namespace CoronaGraph
             double recSutra = recDanas + razlikaDanasJuce;
 
             double dani1 = 1;
-            while (recSutra <= infDanas)
+            if (recSutra > 0) //da izbegnem infinite loop!
             {
-                recSutra += razlikaDanasJuce;
-                string dan = "+" + dani1 + "d";
-                recovered.Points.AddXY(dan, recSutra); //date, brZar
-                ++dani1;
+                while (recSutra <= infDanas)
+                {
+
+
+                    recSutra += razlikaDanasJuce;
+                    string dan = "+" + dani1 + "d";
+                    recovered.Points.AddXY(dan, recSutra); //date, brZar
+                    ++dani1;
+                }
             }
 
             lPrognoza.Text = dani.ToString("0") + " days";

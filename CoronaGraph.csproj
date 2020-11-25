@@ -59,7 +59,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>CoronaGraph_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -218,7 +219,6 @@
     <EmbeddedResource Include="Trend.resx">
       <DependentUpon>Trend.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CoronaGraph_TemporaryKey.pfx" />
     <None Include="key.snk" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
